@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Swift Sculpt</title>
+<meta name="description" content="Privacy Policy covering all mobile applications published by Swift Sculpt on the Google Play Store. No ads, no data selling, and fully GDPR aware.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+
+  :root {
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f5f9;
+    
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    
+    --accent: #6366f1;
+    --accent-dark: #4f46e5;
+    --accent-light: #eeebff;
+    --accent-glow: rgba(99, 102, 241, 0.12);
+    
+    --border: #e2e8f0;
+    --border-hover: #cbd5e1;
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 28px;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 10px 25px -5px rgba(99, 102, 241, 0.05), 0 8px 10px -6px rgba(99, 102, 241, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary: #07090e;
+      --bg-secondary: #0f121d;
+      --bg-tertiary: #161a29;
+      
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #64748b;
+      
+      --accent: #818cf8;
+      --accent-dark: #6366f1;
+      --accent-light: #1b1c3a;
+      --accent-glow: rgba(129, 140, 248, 0.15);
+      
+      --border: #1e293b;
+      --border-hover: #334155;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -2px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  html { 
+    scroll-behavior: smooth; 
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Background Glow Blobs */
+  .bg-glow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.25;
+    mix-blend-mode: screen;
+  }
+
+  @media (prefers-color-scheme: light) {
+    .bg-glow {
+      opacity: 0.1;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  .bg-glow-1 {
+    top: -10%;
+    left: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--accent) 0%, rgba(99, 102, 241, 0) 70%);
+  }
+
+  .bg-glow-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, #f43f5e 0%, rgba(244, 63, 94, 0) 70%);
+  }
+
+  /* Header */
+  header {
+    position: relative;
+    padding: 80px 24px;
+    text-align: center;
+    background: radial-gradient(ellipse at top, var(--accent-glow) 0%, transparent 75%), var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
+                      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .header-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+
+  .brand-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .header-brand:hover .brand-icon {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+  }
+
+  .header-brand span {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  header h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.8px;
+  }
+
+  header p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+
+  /* Meta Bar */
+  .meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 32px 24px 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .badge:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+
+  .updated {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 12px 24px 32px;
+    font-weight: 500;
+  }
+
+  /* Layout Structure */
+  .main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    position: relative;
+  }
+
+  @media (max-width: 1024px) {
+    .main-wrapper {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 24px 16px 60px;
+    }
+  }
+
+  /* Sidebar (Sticky) */
+  .sidebar {
+    position: sticky;
+    top: 40px;
+    align-self: start;
+    max-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .sidebar {
+      position: static;
+      max-height: none;
+    }
+  }
+
+  .toc-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .toc-title {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  @media (max-width: 1024px) {
+    .toc-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .toc-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .toc-item a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .toc-item a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    border-radius: 0 4px 4px 0;
+    transition: var(--transition);
+  }
+
+  .toc-item.active a {
+    color: var(--accent);
+    background: var(--accent-light);
+    font-weight: 600;
+  }
+
+  .toc-item.active a::before {
+    height: 16px;
+  }
+
+  .toc-item a:hover {
+    color: var(--accent);
+    background: var(--bg-tertiary);
+  }
+
+  /* Actions Widget */
+  .sidebar-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-action-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--bg-tertiary);
+    transform: translateY(-1px);
+  }
+
+  /* Right Content Column */
+  .content-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Search Box */
+  .search-container {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2px 8px 2px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .search-input-wrapper:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+
+  .search-icon {
+    color: var(--text-muted);
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  #search-input {
+    width: 100%;
+    height: 48px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+  }
+
+  #search-clear-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+
+  #search-clear-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  #search-results-summary {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding-left: 4px;
+    font-weight: 500;
+  }
+
+  #search-results-summary span {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Sections */
+  section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    scroll-margin-top: 40px;
+  }
+
+  @media (max-width: 600px) {
+    section {
+      padding: 24px;
+    }
+  }
+
+  section:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    width: 38px;
+    height: 38px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  section h2 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+  }
+
+  section p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  section p:last-child {
+    margin-bottom: 0;
+  }
+
+  section h3 {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+    margin: 32px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  section h3::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  /* Unordered List */
+  section ul {
+    list-style: none;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  section ul li {
+    font-size: 15px;
+    color: var(--text-secondary);
+    padding: 3px 0 3px 24px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  section ul li::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* Custom boxes (highlights & note cards) */
+  .highlight {
+    background: var(--accent-light);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .highlight strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .app-note {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .app-note strong {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  /* Data Table */
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    background: var(--bg-secondary);
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .data-table th {
+    background: var(--bg-tertiary);
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    vertical-align: middle;
+  }
+
+  .data-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .data-table tr:hover td {
+    background: var(--bg-primary);
+  }
+
+  /* Status Pills */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .pill-yes {
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  .pill-opt {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .pill-yes {
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .pill-opt {
+      background: rgba(139, 92, 246, 0.12);
+      color: #a78bfa;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+  }
+
+  /* Contact Box */
+  .contact-box {
+    background: radial-gradient(circle at top left, var(--accent-glow) 0%, transparent 65%), var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 48px 32px;
+    text-align: center;
+    margin-top: 32px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .contact-box:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+  }
+
+  .contact-box h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .contact-box h3::before {
+    display: none;
+  }
+
+  .contact-box p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 28px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px var(--accent-glow);
+    transition: var(--transition);
+  }
+
+  .contact-email:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* No Results Card */
+  .no-results {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 60px 40px;
+    text-align: center;
+    color: var(--text-muted);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .no-results svg {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+
+  .no-results h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .no-results p {
+    font-size: 14px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 99;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--accent-glow);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 48px 24px 64px;
+    color: var(--text-muted);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-secondary);
+  }
+
+  footer strong { 
+    color: var(--text-primary); 
+  }
+
+  footer a { 
+    color: var(--accent); 
+    text-decoration: none; 
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Print Override Stylesheet */
+  @media print {
+    body {
+      background: #ffffff !important;
+      color: #000000 !important;
+      font-size: 12pt;
+      line-height: 1.5;
+    }
+    
+    .bg-glow-container,
+    header::before,
+    .meta-bar,
+    .updated,
+    .sidebar,
+    .search-container,
+    .back-to-top,
+    .contact-email,
+    hr {
+      display: none !important;
+    }
+    
+    .main-wrapper {
+      display: block;
+      padding: 0;
+      max-width: 100%;
+    }
+    
+    section {
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      padding: 20px 0 !important;
+      margin-bottom: 20px !important;
+      page-break-inside: avoid;
+    }
+    
+    .section-header {
+      border-bottom: 2px solid #000000 !important;
+      margin-bottom: 15px !important;
+      padding-bottom: 5px !important;
+    }
+    
+    .section-num {
+      background: transparent !important;
+      color: #000000 !important;
+      font-weight: bold !important;
+      width: auto !important;
+      height: auto !important;
+      margin-right: 10px !important;
+    }
+    
+    section h2 {
+      color: #000000 !important;
+      font-size: 18pt !important;
+    }
+    
+    .table-wrapper {
+      border: 1px solid #000000 !important;
+    }
+    
+    .data-table th {
+      background: #f0f0f0 !important;
+      color: #000000 !important;
+      border-bottom: 1px solid #000000 !important;
+    }
+    
+    .data-table td {
+      border-bottom: 1px solid #000000 !important;
+      color: #000000 !important;
+    }
+    
+    .pill {
+      border: 1px solid #000000 !important;
+      background: transparent !important;
+      color: #000000 !important;
+    }
+    
+    .contact-box {
+      border: 1px solid #000000 !important;
+      background: transparent !important;
+      page-break-inside: avoid;
+    }
+    
+    footer {
+      border-top: 1px solid #000000 !important;
+      margin-top: 40px !important;
+      padding-top: 20px !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-glow-container">
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+</div>
+
+<header>
+  <a href="#" class="header-brand">
+    <div class="brand-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 17 Q12 21 20 17" stroke="var(--accent)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M4 13 Q12 17 20 13" stroke="var(--accent)" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M8 4 L12 3 L16 4 L17 9 Q12 12 7 9 Z" fill="var(--accent)" opacity="0.9"/>
+      </svg>
+    </div>
+    <span>Swift Sculpt</span>
+  </a>
+  <h1>Privacy Policy</h1>
+  <p>One policy covering all apps published by Swift Sculpt on the Google Play Store</p>
+</header>
+
+<div class="meta-bar">
+  <span class="badge">All Swift Sculpt Apps</span>
+  <span class="badge">Android</span>
+  <span class="badge">No Ads</span>
+  <span class="badge">No Data Selling</span>
+  <span class="badge">GDPR Aware</span>
+</div>
+<p class="updated">Last updated: June 25, 2026 &nbsp;·&nbsp; Effective immediately</p>
+
+<div class="main-wrapper">
+
+  <aside class="sidebar">
+    <nav class="toc-card">
+      <p class="toc-title">Contents</p>
+      <ol class="toc-list">
+        <li class="toc-item"><a href="#scope">Scope of Policy</a></li>
+        <li class="toc-item"><a href="#collect">Collected Data</a></li>
+        <li class="toc-item"><a href="#use">Data Usage</a></li>
+        <li class="toc-item"><a href="#share">Sharing Practices</a></li>
+        <li class="toc-item"><a href="#storage">Storage & Security</a></li>
+        <li class="toc-item"><a href="#permissions">Device Permissions</a></li>
+        <li class="toc-item"><a href="#children">Children's Privacy</a></li>
+        <li class="toc-item"><a href="#rights">Your Rights</a></li>
+        <li class="toc-item"><a href="#changes">Policy Updates</a></li>
+        <li class="toc-item"><a href="#contact">Contact Support</a></li>
+      </ol>
+    </nav>
+    <button id="print-btn" class="sidebar-action-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      Print / Save PDF
+    </button>
+  </aside>
+
+  <main class="content-column">
+    
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search the privacy policy (e.g. location, GDPR)..." autocomplete="off">
+        <button id="search-clear-btn" aria-label="Clear search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="search-results-summary" style="display: none;">
+        Found <span id="search-count">0</span> matching sections.
+      </div>
+    </div>
+
+    <!-- No Results Card -->
+    <div id="no-results-card" class="no-results" style="display: none;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <line x1="8" y1="11" x2="14" y2="11"></line>
+      </svg>
+      <h3>No matching sections found</h3>
+      <p>Try searching for different terms like "location", "ads", "sell", "GDPR", or "security".</p>
+    </div>
+
+    <!-- 1 -->
+    <section id="scope">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <h2>Scope of This Policy</h2>
+      </div>
+      <p>This Privacy Policy applies to all mobile applications developed and published by <strong>Swift Sculpt</strong> on the Google Play Store, now and in the future. By downloading or using any Swift Sculpt app, you agree to the practices described in this document.</p>
+
+      <div class="app-note">
+        <strong>One policy for all apps.</strong> Every app we publish — regardless of its category or purpose — is covered under this single policy. If a future app requires its own separate policy due to unique data practices, that will be clearly stated on that app's Play Store listing and within the app itself.
+      </div>
+
+      <p>Where an app collects data that goes beyond what is described here, that app will display an additional in-app notice explaining the difference before collecting any such data.</p>
+    </section>
+
+    <!-- 2 -->
+    <section id="collect">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <h2>Information We Collect</h2>
+      </div>
+
+      <div class="highlight">
+        <strong>Our principle:</strong> We collect only the minimum data needed for the app to function. We never collect data in the background or for purposes beyond what is described here.
+      </div>
+
+      <h3>Information you give us directly</h3>
+      <ul>
+        <li>Account information such as your name and email address when you register</li>
+        <li>Profile details and preferences you set up within an app</li>
+        <li>Content you create inside the app (documents, records, entries, or similar)</li>
+        <li>Messages or details you send when contacting our support</li>
+      </ul>
+
+      <h3>Information collected automatically</h3>
+      <ul>
+        <li>Device type, operating system version, and app version for compatibility and bug fixing</li>
+        <li>Crash reports and error logs to help us fix technical issues — these are anonymized</li>
+        <li>Aggregated, anonymous usage patterns (which features are used most) to help us improve the app</li>
+      </ul>
+
+      <h3>Information collected only with your permission</h3>
+      <ul>
+        <li>Location data — only when you actively use a location-based feature within the app</li>
+        <li>Camera or microphone — only when you initiate a feature that requires it</li>
+        <li>Contacts — only when you choose to import data from your contact list</li>
+        <li>Biometric data — processed entirely on your device by your phone's own operating system; we never receive or store biometric information</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section id="use">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <h2>How We Use Your Data</h2>
+      </div>
+      <p>We use collected information strictly for the following purposes:</p>
+      <ul>
+        <li>To operate and deliver the app's core features</li>
+        <li>To sync your data securely across your devices where cloud sync is offered</li>
+        <li>To send push notifications, reminders, or alerts — only when you have enabled them</li>
+        <li>To identify, investigate, and fix bugs, crashes, and performance issues</li>
+        <li>To improve existing features and guide development of new ones, using anonymized data only</li>
+        <li>To respond to your support requests or feedback</li>
+      </ul>
+      <p>We do not use your data for advertising, behavioral profiling, or any purpose not listed above. We do not show ads inside our apps.</p>
+    </section>
+
+    <!-- 4 -->
+    <section id="share">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <h2>Sharing Your Data</h2>
+      </div>
+      <p>We do not sell, rent, or trade your personal data to anyone. Data is shared only in the limited cases below.</p>
+
+      <h3>Third-party service providers</h3>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>What is shared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Firebase</strong></td>
+              <td>Authentication, cloud database, file storage</td>
+              <td>Account info and app content (encrypted)</td>
+            </tr>
+            <tr>
+              <td><strong>Google Sign-In</strong></td>
+              <td>Optional login method</td>
+              <td>Name and email only, if you choose Google login</td>
+            </tr>
+            <tr>
+              <td><strong>Google Play Services</strong></td>
+              <td>App distribution and crash reporting</td>
+              <td>Anonymized crash logs only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>All third-party providers are bound by their own data processing agreements and privacy policies. We do not share your personal content with these providers beyond what is technically required to operate the service.</p>
+
+      <h3>Legal disclosure</h3>
+      <p>We may disclose your information if required to do so by law, regulation, or valid legal process, or if necessary to protect the rights, property, or safety of Swift Sculpt, our users, or the public.</p>
+
+      <h3>Business transfers</h3>
+      <p>If Swift Sculpt is involved in a merger, acquisition, or sale of assets, your data may be transferred as part of that transaction. We will notify you via an in-app notice before your data becomes subject to a different privacy policy.</p>
+    </section>
+
+    <!-- 5 -->
+    <section id="storage">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <h2>Data Storage & Security</h2>
+      </div>
+      <ul>
+        <li>Data stored in the cloud is hosted on Google Firebase servers and protected with industry-standard encryption both in transit (TLS) and at rest</li>
+        <li>Where applicable, our apps support offline mode — your data is stored locally on your device and only syncs to the cloud when you reconnect to the internet</li>
+        <li>Biometric authentication is processed entirely on your device by your phone's operating system — your biometric data never leaves your phone or reaches our servers</li>
+        <li>We retain your data for as long as your account is active. If you delete your account, all your data is permanently deleted within 30 days</li>
+      </ul>
+
+      <div class="highlight">
+        <strong>No internet required for core features.</strong> Where our apps support offline mode, all essential features work without a network connection. Your data is safe on your device and syncs automatically when reconnected.
+      </div>
+
+      <p>Despite these measures, no method of electronic transmission or storage is 100% secure. While we work hard to protect your information, we cannot guarantee absolute security.</p>
+    </section>
+
+    <!-- 6 -->
+    <section id="permissions">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <h2>App Permissions Explained</h2>
+      </div>
+      <p>Our apps may request the following device permissions. Each permission is only requested at the moment you try to use the feature that requires it — not on first install. Optional permissions can be revoked at any time from your device settings without affecting unrelated features.</p>
+
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Why it may be needed</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Internet</strong></td>
+              <td>Cloud sync, login, and online features</td>
+              <td><span class="pill pill-yes">Core</span></td>
+            </tr>
+            <tr>
+              <td><strong>Storage / Files</strong></td>
+              <td>Save exported files (PDFs, documents) to your device</td>
+              <td><span class="pill pill-yes">Core</span></td>
+            </tr>
+            <tr>
+              <td><strong>Notifications</strong></td>
+              <td>Reminders, alerts, and due-date notifications</td>
+              <td><span class="pill pill-opt">Optional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Camera</strong></td>
+              <td>Scanning documents, receipts, or images within the app</td>
+              <td><span class="pill pill-opt">Optional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Microphone</strong></td>
+              <td>Voice input features where available</td>
+              <td><span class="pill pill-opt">Optional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Location</strong></td>
+              <td>Location-based features where available</td>
+              <td><span class="pill pill-opt">Optional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Contacts</strong></td>
+              <td>Import contacts into the app when you choose to</td>
+              <td><span class="pill pill-opt">Optional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Biometrics</strong></td>
+              <td>On-device app lock via Face ID or fingerprint</td>
+              <td><span class="pill pill-opt">Optional</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Not all permissions apply to every app. Each app only requests the permissions relevant to its own features. You can manage permissions at any time via your phone's Settings → Apps → [App Name] → Permissions.</p>
+    </section>
+
+    <!-- 7 -->
+    <section id="children">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>Our apps are intended for users aged 13 and above (or the applicable minimum age in your country). We do not knowingly collect personal information from children under this age.</p>
+      <p>If you are a parent or guardian and believe your child has provided us with personal information without your consent, please contact us immediately at the address below. We will promptly delete that information from our records.</p>
+    </section>
+
+    <!-- 8 -->
+    <section id="rights">
+      <div class="section-header">
+        <div class="section-num">08</div>
+        <h2>Your Rights</h2>
+      </div>
+      <p>You have full control over your personal data at all times. Depending on your location, you may have the following rights:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+        <li><strong>Correction:</strong> Update or correct inaccurate information directly within the app or by contacting us</li>
+        <li><strong>Deletion:</strong> Delete your account and all associated data permanently — available from within the app or by contacting us</li>
+        <li><strong>Portability:</strong> Export your data in a standard format where the app supports it</li>
+        <li><strong>Restriction:</strong> Ask us to limit how we process your data in certain circumstances</li>
+        <li><strong>Objection:</strong> Object to processing of your data where we rely on legitimate interests</li>
+        <li><strong>Opt-out:</strong> Disable push notifications, optional permissions, or any optional feature at any time without losing core app functionality</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at the email address in Section 10. We will respond within 30 days.</p>
+    </section>
+
+    <!-- 9 -->
+    <section id="changes">
+      <div class="section-header">
+        <div class="section-num">09</div>
+        <h2>Policy Changes</h2>
+      </div>
+      <p>We may update this policy from time to time as we release new apps, add new features, or as legal requirements change. When we make significant changes we will:</p>
+      <ul>
+        <li>Update the "Last updated" date at the top of this page</li>
+        <li>Display an in-app notice the next time you open any of our apps</li>
+      </ul>
+      <p>Minor clarifications that do not change how your data is handled will be updated without a separate notification. We encourage you to review this page periodically. Your continued use of any Swift Sculpt app after changes are posted constitutes acceptance of the updated policy.</p>
+    </section>
+
+    <!-- 10 -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this privacy policy or how your data is handled, please reach out to us. We take all privacy inquiries seriously and aim to respond within 48 hours on business days.</p>
+      
+      <div class="contact-box">
+        <h3>Swift Sculpt — Privacy Team</h3>
+        <p>Questions about your data, deletion requests, or anything else privacy-related.</p>
+        <a href="mailto:privacy@swiftsculpt.com" class="contact-email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          privacy@swiftsculpt.com
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="19" x2="12" y2="5"></line>
+    <polyline points="5 12 12 5 19 12"></polyline>
+  </svg>
+</button>
+
+<footer>
+  <p>© 2026 <strong>Swift Sculpt</strong>. All rights reserved.</p>
+  <p style="margin-top:8px; max-width:540px; margin-left:auto; margin-right:auto; opacity: 0.75;">
+    This policy covers all apps published by Swift Sculpt on the Google Play Store. Bookmark this page — the same URL applies to every app we release.
+  </p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. ScrollSpy Navigation
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // Trigger when section occupies the active zone
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      // Don't update ScrollSpy while filtering with active search queries
+      if (document.getElementById('search-input').value.trim() !== '') return;
+
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          const activeLink = document.querySelector(`.toc-list a[href="#${id}"]`);
+          if (activeLink) {
+            document.querySelectorAll('.toc-list li').forEach(item => item.classList.remove('active'));
+            activeLink.parentElement.classList.add('active');
+          }
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section[id]').forEach(section => {
+      observer.observe(section);
+    });
+
+    // 2. Search & Filter Logic
+    const searchInput = document.getElementById('search-input');
+    const clearBtn = document.getElementById('search-clear-btn');
+    const resultsSummary = document.getElementById('search-results-summary');
+    const countSpan = document.getElementById('search-count');
+    const sections = document.querySelectorAll('section[id]');
+    const noResultsCard = document.getElementById('no-results-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+
+      if (query === '') {
+        clearBtn.style.display = 'none';
+        resultsSummary.style.display = 'none';
+        sections.forEach(s => s.style.display = 'block');
+        noResultsCard.style.display = 'none';
+        
+        // Restore active TOC highlight on scroll position
+        triggerScrollspyRefresh();
+        return;
+      }
+
+      clearBtn.style.display = 'flex';
+      let matches = 0;
+
+      sections.forEach(section => {
+        const titleText = section.querySelector('h2').textContent.toLowerCase();
+        // search inside the headers and paragraph content
+        const bodyText = section.textContent.toLowerCase();
+
+        if (titleText.includes(query) || bodyText.includes(query)) {
+          section.style.display = 'block';
+          matches++;
+        } else {
+          section.style.display = 'none';
+        }
+      });
+
+      countSpan.textContent = matches;
+      resultsSummary.style.display = 'block';
+
+      if (matches === 0) {
+        noResultsCard.style.display = 'block';
+      } else {
+        noResultsCard.style.display = 'none';
+      }
+
+      // Clear TOC highlights during search to avoid confusion
+      document.querySelectorAll('.toc-list li').forEach(item => item.classList.remove('active'));
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+      resultsSummary.style.display = 'none';
+      sections.forEach(s => s.style.display = 'block');
+      noResultsCard.style.display = 'none';
+      searchInput.focus();
+      triggerScrollspyRefresh();
+    });
+
+    function triggerScrollspyRefresh() {
+      // Find what's currently in viewport to re-highlight active TOC item
+      const scrollPos = window.scrollY + 100;
+      let activeSectionId = null;
+      
+      sections.forEach(section => {
+        if (section.offsetTop <= scrollPos) {
+          activeSectionId = section.getAttribute('id');
+        }
+      });
+      
+      if (activeSectionId) {
+        document.querySelectorAll('.toc-list li').forEach(item => item.classList.remove('active'));
+        const activeLink = document.querySelector(`.toc-list a[href="#${activeSectionId}"]`);
+        if (activeLink) activeLink.parentElement.classList.add('active');
+      }
+    }
+
+    // 3. Floating Back to Top Button
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 4. Print & PDF Button Trigger
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) {
+      printBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
